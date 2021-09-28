@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="stylist.css">
+    <meta charset="UTF-8">
+    <title>(__5__)</title>
+</head>
+<body>
+<br>
+    <div>x:
+        <input type="text" id="numx">
+        y:
+        <input type="text" id="numy">
+        <h3>Dействия над числами</h3>
+        <strong>
+        <p>1. сложение</p>
+        <p>2. вычитание</p>
+        <p>3. умножение</p>
+        <p>4. деление</p>
+        </strong>
+        <input type="text" id="vch">
+        <button onclick="do_smth()">Вычислить</button>
+        <p id="result"></p>
+    </div>
+<script>
+    function do_smth(){
+        let operation = 'nothing';
+        let vch = document.getElementById('vch').value;
+        let numx = document.getElementById('numx').value;
+        let numy = document.getElementById('numy').value;
+        if((numx>=0)&&(numy>=0)){  //в задании было сказано "положительные"
+            let outvalue;
+            switch(vch){
+                case '1': outvalue = sum(numx, numy); operation = 'суммы'; break;
+                case '2': outvalue = subtraction(numx, numy); operation = 'вычитания'; break;
+                case '3': outvalue = multiplication(numx, numy); operation = 'умножения'; break;
+                case '4': outvalue = division(numx, numy); operation = 'деления'; break;
+                default: alert('Введено не верное число операции');
+            }
+            if(division(numx,numy)===-1){
+                alert('Деление на 0');
+            }
+            if(outvalue!==undefined){
+                document.getElementById('result').innerHTML = 'Результат <strong>'+operation+'</strong>: '+outvalue;
+            }
+        }
+        else alert('замечены отрицательные числа!');
+    }
+    //сумма
+    function sum(numx, numy){
+        return numx+numy;
+    }
+    //вычитание
+    function subtraction(numx, numy){
+        return numx-numy;
+    }
+    //умножение
+    function multiplication(numx, numy){
+        return numx*numy;
+    }
+    //деление
+    function division(numx, numy){
+        if(numy!==0){
+            return numx/numy;
+        }
+        else return -1;
+    }
+</script>
+</body>
+</html>

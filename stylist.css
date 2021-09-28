@@ -1,0 +1,16 @@
+.alert_red{
+    color:red;
+}
+.alert_green{
+    color: green;
+}
+body{
+    text-align: center;
+}
+input{
+    background: aquamarine 15px 15px;
+    margin-bottom: 10px;
+}
+p{
+    margin: 0;
+}

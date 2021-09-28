@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+	<title>(______)</title>
+	<link rel="stylesheet" href="stylist.css">
+</head>
+<body>
+	<h1>Задание 1</h1>
+	<p>
+		<input id='submit' size="2" onchange="submitFunc()">
+		 -> press Enter
+	</p>
+	<br>
+
+	<div>Ответ:
+		<h3 id='result'>
+		</h3>
+	</div>
+	<br>
+
+	<h1>Задание 2</h1>
+	Гантели:
+	<div>
+		<input id='gante1' size="2">
+		<input id='gante2' size="2">
+		<input id='gante3' size="2">
+	</div>
+	<button onclick='ganteli()'>Вычислить</button>
+
+	<div id="result2">
+
+	</div>
+	<br>
+	<h1>Задание 3</h1>
+	<input id='familia'>
+	<button onclick='razbor()'>ТЫК ХУИК</button>
+
+	<div>
+		<p id="result31"></p>
+		<p id="result32"></p>
+	</div>
+
+	<script type="text/javascript" >
+		function submitFunc(){
+			let x = document.getElementById('submit').value;
+			let s = (x**2-7*x+10)/(x**2-8*x+12)
+			document.getElementById('result').innerHTML=`${s}`;
+		}
+
+		function ganteli(){
+			let min, max;
+			let a, b, c;
+			a = document.getElementById('gante1').value;
+			b = document.getElementById('gante2').value;
+			c = document.getElementById('gante3').value;
+//мб тут ошибки, а при больших числах баги
+			if(a<b){
+				if(a<c){
+					min=a;
+				}
+				else min=c;
+				if(b<c){
+					max=c;
+				}
+				else max=b;
+			}
+			else {
+				if (a > c) {
+					max = a;
+				}
+				if (b < c) {
+					min = b;
+				}
+			}
+			document.getElementById('result2').innerHTML = `Min= ${min} Max= ${max}`;
+		}
+
+		let arrayGlas = ['а','е','э','о','ы','я','и','ю'];
+		let arraySogl = ['б', 'в', 'г', 'д', 'ж', 'з',
+						 'й', 'к', 'л', 'м', 'н', 'п',
+						 'р', 'с', 'т', 'ф', 'х', 'ц',
+						 'ч', 'ш', 'щ']
+
+		function razbor(){
+			let fam = document.getElementById('familia').value;
+			fam = fam.toLowerCase();
+			document.getElementById('result31').innerHTML = `Согласных: ${sogl(fam)}`;
+			document.getElementById('result32').innerHTML = `Гласных: ${glas(fam)}`;
+		}
+
+		function glas(fam){
+			let fam1 = fam;
+			let num_of_glas=0;
+			for(let i of fam1){
+				if (arrayGlas.indexOf(i) !== -1){
+					num_of_glas++;
+				}
+			}
+			return num_of_glas;
+		}
+
+		function sogl(fam){
+			let fam1 = fam;
+			let num_of_sogl=0;
+			for(let i of fam1){
+				if(arraySogl.indexOf(i) !== -1){
+					num_of_sogl++;
+				}
+			}
+			return num_of_sogl;
+		}
+	</script>
+</body>
+</html>

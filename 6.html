@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript" src="js_1.js"></script>
+    <link rel="stylesheet" href="stylist.css">
+    <meta charset="UTF-8">
+    <title>(__6__)</title>
+</head>
+<body>
+<br>
+    <h1>Введите напряжение и ток для вычисления сопративления</h1>
+    <div>ток:
+        <input type="text" id="voltage" size="28"> Вольт.
+        <br>
+        напряжение:
+        <input type="text" id="current"> Ампер.
+    </div>
+<br>
+    <div>
+        <button onclick="resistance()">ВЫЧИСЛИТЬ</button>
+    </div>
+<br>
+    <div id="result"></div>
+<br>
+<br>
+    <h1>Значения Резисторов</h1>
+    <div><strong>R1</strong>
+        <input type="text" id="resist1" size="10" style="margin-right: 35px"> <!-- знаю что так лучше не делать (style) -->
+        <strong>R2</strong>
+        <input type="text" id="resist2" size="10">
+    </div>
+    <div>
+        <button onclick="resistanceTwo()">ВЫЧИСЛИТЬ</button>
+    </div>
+    <div>
+        Последовательно: <p id="result_posled">?</p>
+        Параллельно: <p id="result_parall">?</p>
+    </div>
+</body>
+</html>

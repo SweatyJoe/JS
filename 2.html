@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="stylist.css">
+    <title>(___4___)</title>
+</head>
+<body>
+<div>
+    <h1>Задание 4</h1>
+    <h4>Введите 20 символов</h4>
+    <input type="text" id="give_symbol">
+    <div id='out_message'></div>
+</div>
+<br>
+<button onclick="kol_vo_elem_20()">Посчитать</button>
+
+
+<script>
+
+    let div = document.createElement('div');
+
+    function kol_vo_elem_20(){
+        var kol_vo = document.getElementById('give_symbol').value;
+        if(kol_vo.length===20){
+            get_element_by_id(kol_vo);
+            if(document.getElementById('alert')!=null){
+
+            }
+        }
+        else{
+            div.className = 'alert_red';
+            document.getElementById('out_message').append(div);
+            if(kol_vo.length<20){
+                div.innerHTML = '<h2>Мало текста! ('+kol_vo.length+')</h2>';
+            }
+            if(kol_vo.length>20){
+                div.innerHTML = '<h2>Много текста! ('+kol_vo.length+')</h2>';
+            }
+        }
+    }
+
+    function get_element_by_id(give_symbol){
+        var give_symbol1 = give_symbol;
+        var elem5 = give_symbol1[4];
+        var iter=0;
+        for (var i = 0; i<give_symbol1.length; i++){
+            if(give_symbol1[i]==elem5){
+                iter++;
+            }
+        }
+        console.log(iter);
+        div.className= 'alert_green';
+        div.innerHTML='<h2>'+iter+' элемент[ов]</h2>'
+        document.getElementById('out_message').append(div);
+    }
+
+</script>
+</body>
+</html>
