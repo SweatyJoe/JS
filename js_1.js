@@ -58,9 +58,9 @@ function hour_cal(){
 function eating_time(timeHour){
     let hour_now = timeHour;
     switch (hour_now){
-        case (hour_now = 8)&&(hour_now = 7): return 'завтрака';
-        case (hour_now=13)&&(hour_now=14): return 'обеда';
-        case (hour_now=19)&&(hour_now=20): return 'ужина';
+        case (hour_now === 8)&&(hour_now === 7): return 'завтрака';
+        case (hour_now===13)&&(hour_now===14): return 'обеда';
+        case (hour_now===19)&&(hour_now===20): return 'ужина';
         default: return 0;
     }
 }
